@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjeev Singhai | Founder, Wellnessta</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-oyq2jnyay6tP1eSJsp97mVBI+ThP3OaZKy6aB0FFgrC5E1jlpqWstKyE6Jtgb0snkAdXxXh8Vbof3gtOeXJ8qA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-z3A7O7SrbqYTy6G8Jq2f47s5Y9IOrsYPXEGpUkIr7u4dgbO8CEND+igHhIxsRZIu5yoSx4pRJLaflTmmWKp2xQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    defer
+  ></script>
+
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Cursor glow -->
+  <div class="cursor-glow"></div>
+
+  <!-- Navigation -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <span class="logo-mark">SS</span>
+        <span class="logo-text">Sanjeev Singhai</span>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#ventures">Ventures</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="tagline">Founder • Wellness-Tech • Brand Builder</p>
+        <h1>
+          Sanjeev <span>Singhai</span>
+        </h1>
+        <p class="hero-subtitle">
+          Founder & CEO of Wellnessta, a wellness-tech platform connecting salons, spas, gyms, yoga and wellness providers with consumers through a unified B2C marketplace and B2B SaaS ecosystem.
+        </p>
+
+        <div class="hero-meta">
+          <div class="meta-item">
+            <span>Experience</span>
+            <strong>34+ Years</strong>
+          </div>
+          <div class="meta-item">
+            <span>Domains</span>
+            <strong>Advertising, Wellness-Tech, MSME</strong>
+          </div>
+          <div class="meta-item">
+            <span>Base</span>
+            <strong>Mumbai, India</strong>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#contact" class="btn primary">Work with Sanjeev</a>
+          <a href="#ventures" class="btn ghost">Explore Ventures</a>
+        </div>
+
+        <div class="hero-scroll">
+          <span>Scroll to explore</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <!-- PHOTO WRAPPER -->
+        <div class="hero-photo-wrapper">
+          <!-- yaha pe apni image ka path daal dena -->
+          <img src="data:image/jpeg;base64,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" alt="Sanjeev Singhai" class="hero-photo" />
+        </div>
+
+        <div class="hero-circle"></div>
+
+        <div class="hero-card primary">
+          <p>Founder, Wellnessta</p>
+          <span>B2C Marketplace • B2B SaaS • Wellness-Tech</span>
+        </div>
+
+        <div class="hero-card secondary">
+          <p>Director, The Brand Power Company (WPP)</p>
+          <span>Co-founding team, HomeTesterClub.com, 24+ countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container section-inner">
+      <div class="section-header">
+        <p class="section-tag">Profile</p>
+        <h2>About Sanjeev</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Sanjeev Singhai is a seasoned business leader and communication specialist with more than three decades of experience in media, marketing, and technology-led ventures.
+          </p>
+          <p>
+            He is the Founder & CEO of Wellnessta, a wellness-tech platform that digitises local salons, spas, gyms, yoga, and wellness centres through cloud-based appointment, inventory, coupon and payroll solutions along with an integrated consumer marketplace.
+          </p>
+          <p>
+            Before Wellnessta, Sanjeev held leadership roles across Amar Ujala, DB Corp (Dainik Bhaskar Group), and The Brand Power Company, where he helped launch and scale HomeTesterClub.com across multiple markets.
+          </p>
+          <p>
+            He has also contributed to India’s MSME ecosystem as National Vice President – Organisational Development & Governance at MSME & Start-ups Forum Bharat, working closely with entrepreneurs and growth-stage businesses.
+          </p>
+        </div>
+
+        <div class="about-cards">
+          <div class="info-card">
+            <h3>Key Focus</h3>
+            <ul>
+              <li>Wellness-tech product strategy & scaling</li>
+              <li>MSME & start-up enablement</li>
+              <li>Brand building & communication</li>
+              <li>Digital-first business models</li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3>Highlights</h3>
+            <ul>
+              <li>Created / supervised 500+ TV & digital commercials</li>
+              <li>Led multi-market brand campaigns across India & MEA</li>
+              <li>Founder of multiple ventures including Wellnessta & Screenista</li>
+              <li>Executive education from leading global business schools</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section experience">
+    <div class="container section-inner">
+      <div class="section-header">
+        <p class="section-tag">Journey</p>
+        <h2>Leadership Experience</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Founder & CEO – Wellnessta</h3>
+            <span class="timeline-meta">2020 – Present · Mumbai, India</span>
+            <p>
+              Building a full-stack wellness-tech platform – a B2C marketplace and B2B SaaS for salons, spas, gyms, yoga, meditation, med-spa and naturopathy centres; enabling online bookings, coupons, inventory, and payroll management.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Director – The Brand Power Company (WPP)</h3>
+            <span class="timeline-meta">2007 – Present</span>
+            <p>
+              Leading the Middle East & Indian subcontinent for consumer advocacy platforms, and part of the founding team that scaled HomeTesterClub.com to 24+ countries as a global grocery buyer community.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>National Vice President – MSME & Start-ups Forum Bharat</h3>
+            <span class="timeline-meta">2021 – 2022</span>
+            <p>
+              Drove organisational development, governance frameworks, and digital platforms to support MSMEs and start-ups across India, with a focus on enabling sustainable growth.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Leadership in Media & Publishing</h3>
+            <span class="timeline-meta">1997 – 2004</span>
+            <p>
+              Held senior marketing and operations roles at GTL Limited, DB Corp (Dainik Bhaskar), and Amar Ujala Publications, leading advertising sales, brand growth, and regional expansion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ventures Section -->
+  <section id="ventures" class="section ventures">
+    <div class="container section-inner">
+      <div class="section-header">
+        <p class="section-tag">Ventures</p>
+        <h2>Entrepreneurial Portfolio</h2>
+      </div>
+
+      <div class="cards-grid">
+        <article class="venture-card">
+          <h3>Wellnessta</h3>
+          <p class="venture-role">Founder & CEO</p>
+          <p class="venture-text">
+            A wellness-tech platform combining a consumer marketplace with SaaS tools for wellness businesses – helping them digitise bookings, operations and customer engagement.
+          </p>
+          <p class="tags">Wellness-Tech · SaaS · Marketplace</p>
+        </article>
+
+        <article class="venture-card">
+          <h3>Screenista Private Limited</h3>
+          <p class="venture-role">Founder</p>
+          <p class="venture-text">
+            A new-age content and technology venture focused on screen-first storytelling, AI-assisted media, and performance-led video experiences for brands.
+          </p>
+          <p class="tags">Media-Tech · Content · AI-first</p>
+        </article>
+
+        <article class="venture-card">
+          <h3>Sanjeev BTC</h3>
+          <p class="venture-role">Founder & Owner</p>
+          <p class="venture-text">
+            A strategic consulting practice supporting brands, MSMEs and start-ups with go-to-market, brand communication, sales optimisation, and India entry strategies.
+          </p>
+          <p class="tags">Consulting · MSME · Strategy</p>
+        </article>
+
+        <article class="venture-card">
+          <h3>Ad Space Mart Pvt. Ltd.</h3>
+          <p class="venture-role">Founder & Owner</p>
+          <p class="venture-text">
+            Media and advertising sales outsourcing venture that partnered with leading publishers and platforms to monetise inventory and build sustainable revenue engines.
+          </p>
+          <p class="tags">Media · Advertising · Revenue</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media & Recognition Section -->
+  <section id="media" class="section media">
+    <div class="container section-inner">
+      <div class="section-header">
+        <p class="section-tag">Media</p>
+        <h2>Interviews & Recognition</h2>
+      </div>
+
+      <div class="media-grid">
+        <div class="media-item">
+          <h3>Wellness-Tech Vision</h3>
+          <p>
+            Featured in business and industry publications discussing Wellnessta’s mission to digitise wellness services and empower local businesses with tech-enabled growth.
+          </p>
+        </div>
+
+        <div class="media-item">
+          <h3>MSME & Start-up Ecosystem</h3>
+          <p>
+            Covered by media for his role as National Vice President at MSME & Start-ups Forum Bharat, championing governance, ease of business, and access to investors.
+          </p>
+        </div>
+
+        <div class="media-item">
+          <h3>Thought Leadership</h3>
+          <p>
+            Regularly invited to share views on wellness trends, digital adoption by service providers, and consumer behaviour in health, fitness and personal care.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container section-inner">
+      <div class="section-header">
+        <p class="section-tag">Connect</p>
+        <h2>Contact & Social</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>
+            For collaborations, speaking engagements, advisory roles or wellness-tech partnerships, you can reach out to Sanjeev using the details below.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span>sanjeev@wellnessta.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope-open"></i>
+              <span>sanjeevrc@gmail.com</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span>+91 91228 71294</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Mumbai, Maharashtra, India</span>
+            </li>
+          </ul>
+
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/sanjeevrc" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/sanjeevsinghaiofficial" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://x.com/SanjeevRC" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="https://www.facebook.com/sanjeevrc" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input id="name" type="text" placeholder="Enter your name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="Enter your email" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" placeholder="How would you like to collaborate?" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="4" placeholder="Write your message..."></textarea>
+          </div>
+
+          <button type="submit" class="btn primary full-width">
+            Send Message
+          </button>
+
+          <p class="form-note">This is a demo form UI. Integration can be done with your preferred email/API service.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Sanjeev Singhai. All rights reserved.</p>
+      <p class="footer-credit">
+        Designed & developed with respect for Sanjeev Sir’s entrepreneurial journey.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
